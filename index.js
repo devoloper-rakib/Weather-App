@@ -54,7 +54,7 @@ weather.fetchWeather(init());
 
 function init() {
 	navigator.geolocation.getCurrentPosition(function (response) {
-		var mapOptions = {
+		let mapOptions = {
 			center: new google.maps.LatLng(
 				response.coords.latitude,
 				response.coords.longitude,
@@ -63,12 +63,12 @@ function init() {
 			mapTypeId: google.maps.MapTypeId.HYBRID,
 		};
 
-		var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+		let map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 		google.maps.event.addListener(map, 'click', function (event) {
-			var myLatLng = event.latLng;
-			var lat = myLatLng.lat();
-			var lng = myLatLng.lng();
+			let myLatLng = event.latLng;
+			let lat = myLatLng.lat();
+			let lng = myLatLng.lng();
 
 			document.getElementById('lat').value = lat;
 			document.getElementById('lang').value = lng;
