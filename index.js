@@ -21,7 +21,7 @@ let weather = {
 		const { name } = data;
 		const { icon, description } = data.weather[0];
 		const { temp, humidity } = data.main;
-		const { speed } = data.wind;
+		const { wind } = data.wind;
 		document.querySelector('.city').innerText = 'Weather in ' + name;
 		document.querySelector('.icon').src =
 			'https://openweathermap.org/img/wn/' + icon + '.png';
@@ -30,7 +30,7 @@ let weather = {
 		document.querySelector('.humidity').innerText =
 			'Humidity : ' + humidity + '%';
 		document.querySelector('.wind').innerText =
-			'Wind speed : ' + speed + ' km/h';
+			'Wind speed : ' + wind + ' km/h';
 		document.querySelector('.weather').classList.remove('reloading');
 	},
 	search: function () {
